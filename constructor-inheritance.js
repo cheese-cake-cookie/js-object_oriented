@@ -23,6 +23,7 @@ function PersonPlus(name, first, second, third) {
 }
 // PersonPlus.prototype.__proto__ = Person.prototype; // 표준 아님
 PersonPlus.prototype = Object.create(Person.prototype);
+// 하지만 위 방식은 PersonPlus를 가리키고 있던 prototype 프로퍼티를 덮어써버리는 현상을 야기함
 
 PersonPlus.prototype.avg = function () {
     return (this.first + this.second + this.third) / 3;
